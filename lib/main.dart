@@ -1,3 +1,4 @@
+import 'package:asynconf/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,16 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Asynconf 2022"),
-        ),
-          body: const Center(
-              child: Text("bienvenue sur l'appli duc salon")
-          )
-      ),
+      home: HomePage(),
     );
   }
 }
+
+
+
+
 
 
