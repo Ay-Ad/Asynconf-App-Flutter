@@ -1,6 +1,6 @@
 # asynconf
 
-Application mobile pour le salon asynconf 2022
+Application mobile pour le salon asynconf 2022 (By Graven)
 
 ## Getting Started
 
