@@ -10,51 +10,46 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Asynconf 2022"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(
-              "assets/img/logo.svg",
-              color: Colors.blue,
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SvgPicture.asset(
+            "assets/img/logo.svg",
+            color: Colors.blue,
+          ),
+          const Text(
+            "Asynconf 2022",
+            style: TextStyle(fontSize: 42, fontFamily: 'Poppins'),
+          ),
+          const Text(
+            "Salon virtuel de l'informatique du 27 au 29 octobre 2022",
+            style: TextStyle(fontSize: 24),
+            textAlign: TextAlign.center,
+          ),
+          const Padding(padding: EdgeInsets.only(top: 20)),
+          ElevatedButton.icon(
+            style: const ButtonStyle(
+                padding: MaterialStatePropertyAll(EdgeInsets.all(20)),
+                backgroundColor: MaterialStatePropertyAll(Colors.green)),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                      pageBuilder: (
+                          _,
+                          __,
+                          ___,
+                          ) =>
+                          const EventPage()));
+            },
+            label: const Text(
+              "Afficher le planning",
+              style: TextStyle(fontSize: 20),
             ),
-            const Text(
-              "Asynconf 2022",
-              style: TextStyle(fontSize: 42, fontFamily: 'Poppins'),
-            ),
-            const Text(
-              "Salon virtuel de l'informatique du 27 au 29 octobre 2022",
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-            ),
-            Padding(padding: EdgeInsets.only(top: 20)),
-            ElevatedButton.icon(
-              style: ButtonStyle(
-                  padding: MaterialStatePropertyAll(EdgeInsets.all(20)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.green)),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    PageRouteBuilder(
-                        pageBuilder: (
-                      _,
-                      __,
-                      ___,
-                    ) =>
-                            EventPage()));
-              },
-              label: Text(
-                "Afficher le planning",
-                style: TextStyle(fontSize: 20),
-              ),
-              icon: Icon(Icons.calendar_month),
-            )
-          ],
-        ),
+            icon: const Icon(Icons.calendar_month),
+          )
+        ],
       ),
     );
   }

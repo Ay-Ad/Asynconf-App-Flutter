@@ -11,7 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Asynconf"),
+        ),
+        body : const HomePage(),
+          bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Acceuil'
+              ),
+              BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_month),
+              label: 'Planning'
+              )
+        ],
+      ),
+      ),
     );
   }
 }
